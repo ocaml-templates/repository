@@ -1,0 +1,22 @@
+(executable
+ ; The name of the executable (used during development)
+ (name main)
+ 
+ ; The public name of the executable (used when installed)
+ (public_name hello)
+ 
+ ; Libraries that this executable depends on
+ (libraries hello)
+ 
+ ; Preprocessor dependencies, if any
+ ; (preprocess (pps ppx_deriving.show ppx_deriving.eq))
+ 
+ ; Flags passed to the OCaml compiler
+ ; (flags (:standard -warn-error -A))
+)
+
+; If you have any data files that should be installed with your executable,
+; you can specify them like this:
+; (install
+;  (section bin)
+;  (files data.txt))

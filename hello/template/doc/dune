@@ -1,0 +1,26 @@
+; This is a Dune file specifically for documentation.
+
+; The 'documentation' stanza tells Dune that we want to build documentation
+(documentation
+ ; 'package' specifies which package this documentation is for.
+ ; This should match the name in your dune-project file.
+ (package hello)
+ 
+ ; 'mld_files' lists the .mld files to include in the documentation.
+ ; Here, we're including our index.mld file.
+ ; If you add more .mld files, list them here, separated by spaces.
+ (mld_files index))
+
+; The 'mdx' stanza specifies which files to preprocess with ocaml-mdx
+; This can be useful for testing code examples in your documentation
+(mdx
+ (files index.mld))
+
+; To generate your documentation, run:
+; dune build @doc
+;
+; This will create HTML documentation in:
+; _build/default/_doc/_html/
+;
+; You can view it by opening the index.html file in that directory.
+; open _build/default/_doc/_html/index.html

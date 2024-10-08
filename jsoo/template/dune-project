@@ -1,0 +1,22 @@
+(lang dune 3.17)
+
+(name hello)
+
+(source
+ (github username/reponame))
+
+(authors "Author Name <author@example.com>")
+
+(maintainers "Maintainer Name <maintainer@example.com>")
+
+(license LICENSE)
+
+(documentation https://url/to/documentation)
+
+(package
+ (name hello)
+ (synopsis "A short synopsis")
+ (description "A longer description")
+ (depends js_of_ocaml js_of_ocaml-ppx)
+ (tags
+  ("add topics" "to describe" your project)))

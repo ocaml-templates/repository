@@ -1,0 +1,19 @@
+name: jsoo
+description: "Javascript application with Js_of_ocaml"
+
+post_generation:
+  - message: "🎁 Building project. This might take a couple minutes."
+  - run: 
+      - "dune pkg lock"
+      - "dune build"
+  - message: |
+      🚀 Project generated successfully! Here are some example commands to get you started:
+      
+      📦 Build the dependencies and the project:
+        dune build
+      
+      🧪 Start the test runner:
+        dune test
+      
+      ⚡ Serve the application:
+        make serve

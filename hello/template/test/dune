@@ -1,0 +1,18 @@
+(test
+ ; The name of the test executable
+ (name test_hello)
+ 
+ ; Libraries that this test depends on
+ (libraries 
+  hello
+  ; Add any testing frameworks here, e.g.:
+  ; alcotest
+  ; qcheck
+ )
+ 
+ ; If your tests need any specific flags
+ ; (flags (:standard -warn-error -A))
+ 
+ ; If your tests depend on any data files, you can specify them like this:
+ ; (deps (glob_files *.json))
+)

@@ -1,0 +1,20 @@
+(library
+ ; The name of the library
+ (name hello)
+ 
+ ; The public name of the library (used when installed as a package)
+ (public_name hello)
+ 
+ ; Libraries that this library depends on
+ (libraries 
+  ; Add any external libraries here, e.g.:
+  ; lwt
+  ; yojson
+ )
+ 
+ ; Preprocessor dependencies, if any
+ ; (preprocess (pps ppx_deriving.show ppx_deriving.eq))
+ 
+ ; Flags passed to the OCaml compiler
+ ; (flags (:standard -warn-error -A))
+)

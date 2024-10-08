@@ -1,0 +1,19 @@
+name: hello
+description: "Tutorial template for your first OCaml project"
+
+post_generation:
+  - message: "🎁 Building project. This might take a couple minutes."
+  - run: 
+      - "dune pkg lock"
+      - "dune build"
+  - message: |
+      🚀 Project generated successfully! Here are some example commands to get you started:
+      
+      📦 Build the dependencies and the project:
+        dune build
+      
+      🧪 Start the test runner:
+        dune test
+      
+      ⚡ Run the executable:
+        dune exec hello

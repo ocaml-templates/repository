@@ -1,0 +1,63 @@
+(lang dune 3.17)
+; This specifies the version of the Dune language syntax used in this file.
+; Dune is backwards compatible, so any version will work with newer Dune binaries.
+
+; The name of the Dune project.
+(name hello)
+
+; Information about the project's source code repository.
+; This is used by opam to link to the project's repository.
+(source (github username/reponame))
+; Replace 'username/reponame' with your actual GitHub username and repository name.
+
+; The authors of the project.
+(authors "Author Name <author@example.com>")
+; You can list multiple authors:
+; (authors "Author1 Name <author1@example.com>" "Author2 Name <author2@example.com>")
+
+; The current maintainers of the project.
+(maintainers "Maintainer Name <maintainer@example.com>")
+; Similar to authors, you can list multiple maintainers if needed.
+
+; The project's license.
+; (license LICENSE)
+; Common values include MIT, BSD-3-Clause, GPL-3.0, etc.
+; Make sure this matches the actual license file in your project.
+
+; The URL where the project's documentation is hosted.
+(documentation "https://url/to/documentation")
+; If you're using GitHub Pages, this might be something like:
+; "https://username.github.io/reponame/"
+
+; Generate opam package files.
+; This is useful if you plan to distribute your project via opam.
+; (generate_opam_files true)
+
+; Enable the use of the mdx preprocessor for running code examples in documentation.
+(using mdx 0.3)
+
+; Package definition
+(package
+ (name hello)
+ ; The name of the opam package. This is what users will use to install your package.
+ 
+ (synopsis "A short synopsis")
+ ; A one-line description of your project. Keep it concise and clear.
+ 
+ (description "A longer description of your project. You can provide more details here about what your project does and why it's useful.")
+ 
+ (depends 
+  (ocaml (>= 4.08.0))
+  dune
+  ; List other dependencies here, for example:
+  ; (lwt (>= 5.3.0))
+  ; (alcotest :with-test)
+  ; The `:with-test` flag means this dependency is only needed for running tests.
+ )
+ 
+ (tags 
+  (topics "to describe" your project))
+  ; Tags help users find your project on OCaml.org. Choose relevant keywords.
+)
+
+; See the complete stanza docs at https://dune.readthedocs.io/en/stable/dune-files.html#dune-project

@@ -1,0 +1,131 @@
+{0 Documenting Your OCaml Project}
+
+Welcome to this small guide on documenting your OCaml project! This file (index.mld) serves as both an example and an introduction to OCaml documentation practices.
+
+{1 Understanding .mld Files}
+
+The file you're reading now is a .mld (Module Language Definition) file. These files are used to create standalone documentation pages in your project.
+
+- The 'index.mld' file typically serves as the main page of your documentation.
+- You can create additional .mld files for different sections or topics in your documentation.
+- .mld files use a syntax similar to Markdown, with some OCaml-specific extensions.
+
+For a complete reference of the syntax used in .mld files, please refer to the {{:https://ocaml.github.io/odoc/odoc_for_authors.html}odoc documentation for authors}.
+
+{1 Structure of Documentation}
+
+Your project documentation typically consists of two main parts:
+
+1. Standalone pages (.mld files)
+2. Code documentation (in .ml and .mli files)
+
+{2 Standalone Pages}
+
+.mld files like this one allow you to write general documentation, tutorials, or overviews of your project. They're great for:
+
+- Providing a high-level overview of your project
+- Writing tutorials or guides
+- Explaining complex concepts that don't fit in code comments
+
+{2 Code Documentation}
+
+In your .mli files, you'll write documentation comments directly above your modules, types, and functions. These comments will be automatically extracted to generate your API documentation.
+
+{3 Module Documentation}
+
+In your .mli files, use (** ... *) at the top of the file, or above a module definition to write module-level documentation:
+
+{[
+(** This is the module documentation for the module defined in the current file. *)
+
+(** And this is the documentation for the module Foo. *)
+module Foo : sig
+  ...
+end
+]}
+
+{3 Function Documentation}
+
+Document functions in your .mli files like this:
+
+{[
+val greet : string -> string
+(** [greet name] returns a greeting for [name].
+    
+    @param name The name to greet
+    @return A greeting string
+    @raise Invalid_argument if [name] is empty *)
+]}
+
+{1 Basics of Odoc syntax}
+
+Here are some basic syntax elements you can use in your .mld files and docstrings. Refer to {{:https://ocaml.github.io/odoc/odoc_for_authors.html}odoc documentation} for more details.
+
+{2 Headings}
+
+- {0 ...} creates a top-level heading (used only once at the start of the file)
+- {1 ...} creates a level 1 heading
+- {2 ...} creates a level 2 heading
+And so on...
+
+{2 Text Formatting}
+
+You can use {b bold}, {i italic}, {e emphasized}, and {^ superscript} text.
+
+{2 Lists}
+
+You can create unordered lists:
+
+- Item 1
+- Item 2
+  - Subitem 2.1
+
+And ordered lists:
+
++ First item
++ Second item
+
+{2 Code Blocks}
+
+You can include code blocks like this:
+
+{[
+let hello_world = "Hello, World!"
+print_endline hello_world
+]}
+
+{2 Links}
+
+- You can link to modules: {!module:Hello}
+- Or to external websites: {{:https://ocaml.org}OCaml Website}
+
+{1 Generating Documentation}
+
+To generate your documentation, run:
+
+{[
+dune build @doc
+]}
+
+This command will:
+1. Extract documentation comments from your .ml and .mli files
+2. Process your .mld files
+3. Generate HTML documentation in the '_build/default/_doc/_html/' directory
+
+You can then view your documentation by opening the 'index.html' file in that directory.
+
+{1 Best Practices}
+
+1. Keep your documentation up-to-date with your code.
+2. Use .mld files for high-level overviews and tutorials.
+3. Document all public functions, types, and modules in your .mli files.
+4. Provide examples in your documentation to show how to use your code.
+5. Consider your audience: write clear, concise explanations.
+
+{1 Next Steps}
+
+- Add documentation comments to your .ml and .mli files
+- Create additional .mld files for more detailed guides or topics
+- Explore the {{:https://ocaml.github.io/odoc/}odoc documentation} for advanced features
+
+Remember, good documentation makes your project more accessible and easier to use!

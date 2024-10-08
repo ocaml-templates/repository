@@ -1,0 +1,9 @@
+(rule
+ (target main.js)
+ (deps ../bin/main.bc.js)
+ (action
+  (copy %{deps} %{target})))
+
+(alias
+ (name all)
+ (deps index.html main.js main.css))
